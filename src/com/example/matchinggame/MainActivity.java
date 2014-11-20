@@ -11,6 +11,10 @@ import android.view.ViewGroup;
 
 public class MainActivity extends Activity {
 
+Fragment fragment = new Fragment();
+// Insert the fragment by replacing any existing fragment
+FragmentManager fragmentManager = getFragmentManager();
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -28,6 +32,10 @@ public class MainActivity extends Activity {
         	return view;
 	}
 	
+	public void buttonClicked (View view) {
+        activityCallback.onButtonClick(sSeekValue,
+                                       sEditText.getText().toString());     
+    	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
