@@ -11,6 +11,10 @@ import android.view.ViewGroup;
 
 public class MainActivity extends Activity {
 
+private Fragment fragment = new Fragment2();
+// Insert the fragment by replacing any existing fragment
+private FragmentManager fragmentManager = getFragmentManager();
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
