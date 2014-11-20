@@ -1,0 +1,26 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible"
+    tools:context="com.example.matchinggame.MainActivity"
+    tools:ignore="MergeRootFrame" >
+
+    <fragment
+        android:id="@+id/FragmentGrid"
+        android:name="long1.henry.fragmentexample.GridFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        tools:layout="@layout/fragment_main" />
+    
+    <fragment
+        android:id="@+id/fragmentStart"
+        android:name="long1.henry.fragmentexample.StartFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        tools:layout="@layout/fragment_start" />
+
+</FrameLayout>
