@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 
 public class MainActivity extends Activity {
 
-Fragment fragment = new Fragment();
+Fragment fragment = findFragmentByTag("FragmentGrid");
 // Insert the fragment by replacing any existing fragment
 FragmentManager fragmentManager = getFragmentManager();
 
@@ -23,7 +23,7 @@ FragmentManager fragmentManager = getFragmentManager();
 			getFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
-		final Button button = (Button) view.findViewById(R.id.button1);
+		final Button button = (Button) view.findViewById(R.id.bStart);
         	button.setOnClickListener(new View.OnClickListener() {
             	public void onClick(View v) {
                 	buttonClicked(v);
@@ -33,8 +33,7 @@ FragmentManager fragmentManager = getFragmentManager();
 	}
 	
 	public void buttonClicked (View view) {
-        activityCallback.onButtonClick(sSeekValue,
-                                       sEditText.getText().toString());     
+        	fragmentManager.beginTransaction().replace(R.id.fragmentStart, fragment).commit();     
     	}
 
 	@Override
