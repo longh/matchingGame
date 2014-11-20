@@ -11,10 +11,6 @@ import android.view.ViewGroup;
 
 public class MainActivity extends Activity {
 
-private Fragment fragment = new Fragment2();
-// Insert the fragment by replacing any existing fragment
-private FragmentManager fragmentManager = getFragmentManager();
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -23,7 +19,15 @@ private FragmentManager fragmentManager = getFragmentManager();
 			getFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
+		final Button button = (Button) view.findViewById(R.id.button1);
+        	button.setOnClickListener(new View.OnClickListener() {
+            	public void onClick(View v) {
+                	buttonClicked(v);
+            	}
+		});
+        	return view;
 	}
+	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
