@@ -1,5 +1,6 @@
 package com.example.matchinggame;
 
+//Below are the necessary imports
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
