@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 public class MainActivity extends Activity {
 
 Fragment fragment = findFragmentByTag("FragmentGrid");
+Fragment fragment2 = findFragmentByTag("fragmentStart");
 // Insert the fragment by replacing any existing fragment
 FragmentManager fragmentManager = getFragmentManager();
 
@@ -26,15 +27,20 @@ FragmentManager fragmentManager = getFragmentManager();
 		final Button button = (Button) view.findViewById(R.id.bStart);
         	button.setOnClickListener(new View.OnClickListener() {
             	public void onClick(View v) {
-                	buttonClicked(v);
+                	fragmentManager.beginTransaction().replace(R.id.fragmentStart, fragment).commit();    
+            	}
+		});
+        	return view;
+        	
+        	final Button button2 = (Button) view.findViewById(R.id.bStart);
+        	button2.setOnClickListener(new View.OnClickListener() {
+            	public void onClick(View v) {
+                	fragmentManager.beginTransaction().replace(R.id.FragmentGrid, fragment2).commit();    
             	}
 		});
         	return view;
 	}
 	
-	public void buttonClicked (View view) {
-        	fragmentManager.beginTransaction().replace(R.id.fragmentStart, fragment).commit();     
-    	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
