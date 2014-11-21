@@ -2,19 +2,23 @@ package com.example.matchinggame;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity{
 
-Fragment fragment = findFragmentByTag("FragmentGrid");
-Fragment fragment2 = findFragmentByTag("fragmentStart");
-// Insert the fragment by replacing any existing fragment
 FragmentManager fragmentManager = getFragmentManager();
+	
+Fragment fragment = fragmentManager.findFragmentByTag("FragmentGrid");
+Fragment fragment2 = fragmentManager.findFragmentByTag("fragmentStart");
+// Insert the fragment by replacing any existing fragment
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -24,21 +28,19 @@ FragmentManager fragmentManager = getFragmentManager();
 			getFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
-		final Button button = (Button) view.findViewById(R.id.bStart);
+		final Button button = (Button) findViewById(R.id.bStart);
         	button.setOnClickListener(new View.OnClickListener() {
             	public void onClick(View v) {
                 	fragmentManager.beginTransaction().replace(R.id.fragmentStart, fragment).commit();    
             	}
 		});
-        	return view;
         	
-        	final Button button2 = (Button) view.findViewById(R.id.bStart);
+        	final Button button2 = (Button) findViewById(R.id.bQuit);
         	button2.setOnClickListener(new View.OnClickListener() {
             	public void onClick(View v) {
                 	fragmentManager.beginTransaction().replace(R.id.FragmentGrid, fragment2).commit();    
             	}
 		});
-        	return view;
 	}
 	
 
