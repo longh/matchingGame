@@ -1,0 +1,48 @@
+package com.example.matchinggame;
+
+public class MatchGrid {
+	private Tile[][] grid;
+	private boolean [][] solved;
+	private Tile a;
+	private Tile b;
+	public MatchGrid(){
+		setUp();
+	}
+	
+	public void setUp(){
+		grid = new Tile[4][4];
+		for(int x = 0; x < 4; x++){
+			for(int y = 0; y < 4; y++){
+				grid[x][y] = new Tile(x,y,0);
+				solved[x][y] = false;
+			}
+		}
+		//Next randomly assign images
+	}
+	
+	public void click(int x, int y, Object tag, boolean change){
+		
+	}
+	
+	public Tile getTile(int q, int w){
+		return grid[q][w];
+	}
+	
+	public boolean isMatching(){
+		if(a.getImage() == b.getImage())return true;
+		else return false;
+	}
+	
+	public void keep(){
+		solved[a.getX()][a.getY()] = true;
+		solved[b.getX()][b.getY()] = true;
+		lose();
+	}
+	
+	public void lose(){
+		a = null;
+		b = null;
+	}
+	
+	
+}
