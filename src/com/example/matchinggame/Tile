@@ -1,0 +1,24 @@
+package com.example.matchinggame;
+
+public class Tile {
+	
+	private int x;
+	private int y;
+	private int image;
+	private boolean flipped;
+	private boolean blank;
+	
+	public Tile(int x1, int y1, int pic){
+		x = x1;
+		y = y1;
+		image = pic;
+		flipped = false;
+		blank = true;
+	}
+	
+	public int getX(){return x;}
+	public int getY(){return y;}
+	public int getImage(){return image;}
+	public boolean isFlipped(){return flipped;}
+	public boolean isBlank(){return blank;}
+}
